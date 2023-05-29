@@ -1,0 +1,7 @@
+:root{
+    --background: #000000;
+    --white: #ffffff;
+    --text-gradient-bg: rgb(2,0,36);
+    --text-gradient-1: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,80,153,1) 35%, rgba(0,212,255,1) 100%);
+    --btn-bg:#2f80ed;
+}
