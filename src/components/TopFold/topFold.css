@@ -30,3 +30,23 @@
 .tf-left-secondary-btn{
     margin-left: 36px;
 }
+
+.tf-left-infoStats{
+    display: flex;
+    padding: 48px 0px 0px;
+}
+
+.tf-is-infoItem{
+    margin-right: 24px;
+    flex-direction: column;
+}
+
+.tf-infoItem-count{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.tf-infoItem-label{
+    font-size: 14px;
+    font-weight: 600;
+}
