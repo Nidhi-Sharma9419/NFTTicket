@@ -13,6 +13,10 @@ const TopFold = () => {
         <div className='tf-left-btns'>
           <Button btnType='PRIMARY' btnText="EXPLORE"/>
           <Button btnType='SECONDARY' btnText="Create" customClass='tf-left-secondary-btn'/>
+             <div className='tf-is-infoItem'>
+              <div className='tf-infoItem-count'>200K+</div>   
+              <div className='tf-infoItem-count'>200K+</div>
+             </div>
         </div>
       </div>
       <div className='tf-right'></div>
