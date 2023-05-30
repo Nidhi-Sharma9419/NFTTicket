@@ -34,7 +34,7 @@ const TopFold = () => {
       <div className='tf-right'>
         <div className='tf-right'>
           <div className='tf-right-diamond'>
-            <div className='yf-r-diamond-item'>
+            <div className='tf-r-diamond-item absolute-center'>
               <img className='tf-r-diamond-img' alt="diamond-banner" src='https://i.seadn.io/gcs/files/df4f6e53f79c13c6ca6fc54381c455b5.png?auto=format&dpr=1&w=512'/>
             </div>
           </div>
