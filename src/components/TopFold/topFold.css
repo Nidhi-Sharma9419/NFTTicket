@@ -71,3 +71,15 @@
 .tf-r-diamond-img{
     height: 400px;
 }
+
+.tf-r-bg-blob{
+    height: 270px;
+    width: 270px;
+    background-color: aquamarine;
+    filter: blur(100.58px);
+    position: absolute;
+    z-index: -99;
+    left: 30%;
+    top: 30%;
+    transform: translate(-70%);
+}
