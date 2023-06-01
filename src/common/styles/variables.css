@@ -5,5 +5,6 @@
     --text-gradient-1: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,80,153,1) 35%, rgba(0,212,255,1) 100%);
     --btn-bg:#2f80ed;
     --bg-blob: rgba(143, 0, 255, 0, 0.35);  /*not working*/
+    --card-border: #282525;
 }
 
