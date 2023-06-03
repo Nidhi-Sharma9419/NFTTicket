@@ -7,9 +7,9 @@ const TopFold = () => {
     <div className="topFold absolute-center">
       <div className="tf-left">
         <div className='tf-heading'>
-          Discover collect, & sell <span className='heading-gradient'> Extraordinary</span> NFTs 
+          Discover Collect, & Sell <span className='heading-gradient'> Extraordinary</span> NFTs 
         </div>
-        <div className='tf-description'>Coolect you NFT Ticket and attend event , resell them.Make sure you buy the NFT Tickets you want. 
+        <div className='tf-description'>Collect you NFT Ticket and attend event , resell them.Make sure you buy the NFT Tickets you want. 
         </div>
         <div className='tf-left-btns'>
           <Button btnType='PRIMARY' btnText="EXPLORE"/>
