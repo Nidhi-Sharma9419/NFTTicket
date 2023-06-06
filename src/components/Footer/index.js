@@ -5,7 +5,7 @@ import './footer.css';
 const Footer = () => {
 
   return (
-    <div> <span className="heading-gradient absolute-center cur-po"><strong>NFTix</strong></span> </div>
+    <div> <span className="footer heading-gradient absolute-center cur-po"><strong>NFTix</strong></span> </div>
   )
 }
 
