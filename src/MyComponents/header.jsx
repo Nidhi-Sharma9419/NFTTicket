@@ -24,35 +24,9 @@ export default function Header() {
                 </div>
                 <div>
 
-//                     <ul className='flex space-x-10'>
-//                         <li
-//                             className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMathRoute("/") && "text-black border-b-red-500"
-//                                 }`}
-//                             onClick={() => navigate("/")}
-//                         >
-//                             Home
-//                         </li>
 
 
-//                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
-//                  border-b-transparent ${pathMathRoute("/events") && "text-black border-b-red-500"}`}
-//                             onClick={() => navigate("/events")}>Manage Events</li>
-//                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
-//                  border-b-transparent ${pathMathRoute("/book-tickets") && "text-black border-b-red-500"}`}
-//                             onClick={() => navigate("book-tickets")}>BookTickets</li>
-//                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
-//                  border-b-transparent ${pathMathRoute("/book-tickets") && "text-black border-b-red-500"}`}
-//                             onClick={() => navigate("resale-tickets")}>Resale</li>
-//                         <li className='py-3'>
-//                            <img src={wallet} alt='Connect wallet'                                className='h-6 cursor-pointer'
-//                                onClick={() => navigate("/")}
-//                             />
-//                         </li>
-//                     </ul>
-
-//                 </div>
-
-                    <ul className='flex space-x-5'>
+            <ul className='flex space-x-5'>
                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-black border-b-red-500"
                             }`} onClick={() => navigate("/")}
                         >Home</li>
@@ -67,8 +41,8 @@ export default function Header() {
                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
                 border-b-transparent ${pathMatchRoute("/book-tickets") && "text-black border-b-red-500"}`}
                             onClick={() => navigate("/book-tickets")}>BookTickets</li>
-                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
-                 border-b-transparent ${pathMathRoute("/book-tickets") && "text-black border-b-red-500"}`}
+                        <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
+                border-b-transparent ${pathMathRoute("/book-tickets") && "text-black border-b-red-500"}`}
                             onClick={() => navigate("resale-tickets")}>Resale</li>
                     </ul>
                 </div> 
