@@ -19,14 +19,17 @@ export default function Header() {
                         className='h-16 cursor-pointer'
                         onClick={() => navigate("/")}
                     />
-
+                
 
                 </div>
                 <div>
-                    <ul className='flex space-x-10'>
+                    <ul className='flex space-x-5'>
                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-black border-b-red-500"
                             }`} onClick={() => navigate("/")}
                         >Home</li>
+                        <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
+                border-b-transparent ${pathMatchRoute('/connect') && "text-black border-b-red-500"}`}
+                            onClick={() => navigate("/connect")}>Connect</li>
 
 
                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
@@ -34,9 +37,13 @@ export default function Header() {
                             onClick={() => navigate("/events")}>Events</li>
                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
                 border-b-transparent ${pathMatchRoute("/book-tickets") && "text-black border-b-red-500"}`}
-                            onClick={() => navigate("book-tickets")}>BookTickets</li>
+                            onClick={() => navigate("/book-tickets")}>BookTickets</li>
                     </ul>
-                </div>
+                </div> 
+                
+
+
+
             </header>
         </div>
     )
