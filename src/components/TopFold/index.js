@@ -7,7 +7,7 @@ const TopFold = () => {
     <div className="topFold absolute-center">
       <div className="tf-left">
         <div className='tf-heading'>
-          Discover Collect, & Sell <span className='heading-gradient'> Extraordinary</span> NFTs 
+          Discover Collect, & Sell <span className='heading-gradient'> Extraordinary</span> NFT Tickets
         </div>
         <div className='tf-description'>Collect you NFT Ticket and attend event , resell them.Make sure you buy the NFT Tickets you want. 
         </div>
@@ -36,7 +36,7 @@ const TopFold = () => {
           <div className='tf-r-bg-blob'></div>
           <div className='tf-right-diamond'>
             <div className='tf-r-diamond-item absolute-center'>
-              <img className='tf-r-diamond-img' alt="diamond-banner" src='https://i.seadn.io/gcs/files/df4f6e53f79c13c6ca6fc54381c455b5.png?auto=format&dpr=1&w=512'/>
+              <img className='tf-r-diamond-img' alt="diamond-banner" src='https://i.seadn.io/gcs/files/ae46e44311f0b1d455adc82ebc8e0c78.png?auto=format&dpr=1&w=512'/>
             </div>
           </div>
         </div>
