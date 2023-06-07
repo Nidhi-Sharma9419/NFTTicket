@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Web3Modal from 'web3modal';
 import { ethers } from "ethers";
 //import { Web3Provider } from 'ethers';
 import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
+//import { Web3Provider } from '@ethersproject/providers';
 
 
 
@@ -15,6 +16,11 @@ import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 
 
 export default function Connect (){
+    
+
+
+    //const [BrowserProvider, setWeb3Provider] = useState(null);
+    const [Web3Provider, setWeb3Provider] = useState(null)
     
     const providerOptions = {
         coinbasewallet:{
@@ -35,6 +41,9 @@ async function connectWallet(){
     });
     const web3ModalInstance = await web3Modal.connect();
     const web3ModalProvider = new ethers.BrowserProvider(web3ModalInstance);
+    if(web3ModalProvider){
+        setWeb3Provider(web3ModalProvider);
+    }
     console.log(web3ModalProvider);
     } catch (error) { 
 
@@ -48,9 +57,20 @@ return (
     
     <div className='App-header'>
         <h1>Web3Modal Connection!</h1>
-                <button onClick={connectWallet}>
+                
+        {
+        Web3Provider== null?
+        (
+            <button onClick={connectWallet}>
                     Connect Wallet
                 </button>
+        ):(
+            <div>
+            <p>Connected!!!</p>
+            <p>{setWeb3Provider.provider}</p>    
+            </div>
+        )
+        }        
     </div>
     
 )
