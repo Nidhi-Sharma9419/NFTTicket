@@ -1,5 +1,5 @@
 
-import image from '../logo.svg'
+import image from '../NFTix.svg'
 //import wallet from '../assets/metamask-logo.png'
 
 import { useLocation, useNavigate } from "react-router-dom";
@@ -16,15 +16,13 @@ function pathMatchRoute(route) {
             <header className='flex justify-between items-center px-3 max-w-6xl mx-auto'>
                 <div>
                     <img src={image} alt='NFTix'
-                        className='h-16 cursor-pointer'
+                        className='flex items-center justify-between h-14 px-4'
                         onClick={() => navigate("/")}
                     />
                 
 
                 </div>
                 <div>
-
-
 
                 <ul className='flex space-x-5'>
                         <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-black border-b-red-500"

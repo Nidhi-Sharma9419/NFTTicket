@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from "../../common/Button";
 
+
 import './topFold.css';
 const TopFold = () => {
   return (
@@ -13,7 +14,8 @@ const TopFold = () => {
         </div>
         <div className='tf-left-btns'>
           <Button btnType='PRIMARY' btnText="EXPLORE"/>
-          <Button btnType='SECONDARY' btnText="Create" customClass='tf-left-secondary-btn'/>
+         <Button btnType='SECONDARY' btnText="Create" customClass='tf-left-secondary-btn'/>
+         
           </div>
             <div className='tf-left-infoStats '>
             <div className='tf-is-infoItem absolute-center'>
