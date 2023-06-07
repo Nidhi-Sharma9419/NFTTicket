@@ -122,7 +122,7 @@ export default function TicketForm() {
                     onChange={handleChange}
                 />
 
-                <button type="submit">Create Ticket</button>
+                <button className='bg-black' type="submit">Create Ticket</button>
             </form>
 
             {submittedData && (

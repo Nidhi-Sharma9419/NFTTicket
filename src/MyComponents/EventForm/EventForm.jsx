@@ -113,7 +113,7 @@ export default function EventForm() {
           onChange={handleImageChange}
         />
 
-        <button type="submit">Create Event</button>
+        <button className='bg-black' type="submit">Create Event</button>
       </form>
 
       {submittedData && (
