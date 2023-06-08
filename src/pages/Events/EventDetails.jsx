@@ -1,13 +1,9 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import axios from "axios";
-
 import PoundPrice from "../../MyComponents/Helpers/Price/Pound";
-
 import { nftaddress, nftmarketaddress } from "../../MyComponents/Helpers/config";
-
 import {
   signers,
   tokenContract,
@@ -19,12 +15,20 @@ export default function EventDetails() {
   const [tickets, setTickets] = useState([]);
   const [loadingState, setLoadingState] = useState(false);
   const [err, setErr] = useState("");
-  const router = useRouter();
-  const eventId = router.query["id"];
+  const  { eventId } = useParams();
+
   useEffect(() => {
-    if (!router.isReady) return;
     loadData();
-  }, [router.isReady]);
+  },[]);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  function pathMatchRoute(route) {
+    if (route === location.pathname) {
+      return true;
+    }
+  }
+
 
   async function loadData() {
     await loadEvent();
@@ -127,7 +131,7 @@ export default function EventDetails() {
       );
       await transaction.wait();
       setLoadingState(true);
-      router.push("/tickets");
+      navigate("/tickets");
     } catch (error) {
       console.log(error);
       error.data === undefined
@@ -254,12 +258,10 @@ export default function EventDetails() {
                         </div>
                       </div>
                       {ticket.resaleAvail && (
-                        <Link href={`/resale/${ticket.tokenId}`}>
-                          <a className="text-dark fw-bold text-center">
+                          <a onClick={() => navigate(`/resale/${ticket.tokenId}`)} className="text-dark fw-bold text-center">
                             Available on resale{" "}
                             <i className="bi bi-arrow-right-circle-fill"></i>
                           </a>
-                        </Link>
                       )}
                     </div>
                   </div>

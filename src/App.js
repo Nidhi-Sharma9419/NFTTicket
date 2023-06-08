@@ -12,11 +12,16 @@ import Home from "./pages/Home";
 import Events from "./pages/Events/Events";
 import CreateEvent from "./pages/Events/CreateEvent";
 import MyEvents from "./pages/Events/MyEvents";
+import Validate from "./pages/Events/Validate";
+import EventDetails from "./pages/Events/EventDetails";
+import TicketDetails from "./pages/tickets/TicketDetails";
+import CreateTicket from "./pages/tickets/Create/CreateTicket";
 import BookTickets from "./pages/BookTickets";
 import Web3Modal from "web3modal";
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 import Resale from "./pages/Resale";
 import Connect from "./pages/Connect";
+import MyTickets from "./pages/tickets/MyTickets";
 
 const App = () => {
   const [web3Provider, setWeb3Provider] = useState(null);
@@ -106,10 +111,13 @@ const App = () => {
           <Route path="/events" element={<Events />}></Route>
           <Route path="/events-create" element={<CreateEvent />}></Route>
           <Route path="/events-myevents" element={<MyEvents />}></Route>
-          <Route path="/events-myevents/:id" element={<MyEvents />}></Route>
-          <Route path="/events-validate/:id" element={<MyEvents />}></Route>
+          <Route path="/events-myevents/:eventId" element={<EventDetails />}></Route>
+          <Route path="/events-validate/:eventId" element={<Validate />}></Route>
           <Route path="/book-tickets" element={<BookTickets />}></Route>
           <Route path="/resale-tickets" element={<Resale />}></Route>
+          <Route path="/tickets" element={<MyTickets />}></Route>
+          <Route path="/tickets/:tokenId" element={<TicketDetails />}></Route>
+          <Route path="/tickets-create/:eventId" element={<CreateTicket />}></Route>
         </Routes>
       </Router>
     </div>

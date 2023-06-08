@@ -110,6 +110,11 @@ export default function EventForm() {
     }
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    addEvent(); 
+  };
+
   async function addEvent() {
     setLoadingState(false);
     const signedContracts = await signers();
@@ -124,7 +129,7 @@ export default function EventForm() {
       );
       await transaction.wait();
       setLoadingState(true);
-      navigate("/events/my-events");
+      navigate("/events-myevents");
     } catch (error) {
       console.log(error);
       error.data === undefined
@@ -152,12 +157,12 @@ export default function EventForm() {
   return (
     <div className="container">
        
-      <form>
+      <form onSubmit={handleSubmit}>
       <p className="">{err}</p>
         <br />
       <label htmlFor="eventName">Event Name</label>
         <input
-          required="true"
+          required={true}
           id="eventName"
           type="text"
           placeholder="Enter event name"
@@ -169,7 +174,7 @@ export default function EventForm() {
 
         <label htmlFor="description">Description</label>
         <input
-          required="true"
+          required={true}
           v
           id="description"
           type="text"
@@ -185,12 +190,12 @@ export default function EventForm() {
           id="date"
           selected={eventDate}
           onChange={(date) => setEventDate(formatDate(date))}
-          required
+          required={true}
         />
 
         <label htmlFor="address">Event Address</label>
         <input
-          required="true"
+          required={true}
           id="address"
           type="text"
           placeholder="Enter event address"
@@ -202,7 +207,7 @@ export default function EventForm() {
 
         <label htmlFor="postcode">Event Postcode</label>
         <input
-          required="true"
+          required={true}
           id="postcode"
           type="text"
           placeholder="Enter post code"
@@ -214,7 +219,7 @@ export default function EventForm() {
 
         <label htmlFor="image">Event Picture</label>
         <input
-          required="true"
+          required={true}
           id="image"
           type="file"
           name="image"
@@ -231,7 +236,7 @@ export default function EventForm() {
           )}
         </div>
 
-        <button className="bg-black" onClick={addEvent} type="submit">
+        <button className="bg-black" type="submit">
           Create Event
         </button>
       </form>

@@ -125,10 +125,10 @@ export default function MyEvents() {
                     <i className="bi bi-geo-alt-fill"></i> {event.location}
                   </p>
                 </div>
-                  <a onClick={() => navigate(`/events/validate/${event.eventId}`)} className="fw-bold">
+                  <button onClick={() => navigate(`/events-validate/${event.eventId}`)} >
                     Validate Event's Tickets{" "}
                     <i className="bi bi-arrow-right-circle-fill"></i>
-                  </a>
+                  </button>
               </div>
               <div className="card-footer bg-primary">
                 <p className="small text-light fw-bold">
@@ -147,7 +147,7 @@ export default function MyEvents() {
                   style={{ backgroundColor: "#eee8a9" }}
                   className="btn fw-bold text-primary"
                   onClick={() => {
-                    navigate(`/tickets/create/${event.eventId}`);
+                    navigate(`/tickets-create/${event.eventId}`);
                   }}
                 >
                   Create Tickets
