@@ -7,7 +7,7 @@
   }
   
   form {
-    background: rgb(229, 65, 65);
+    background: rgb(235, 192, 192);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -16,7 +16,9 @@
   form label {
     display: block;
     margin-bottom: 5px;
-    color: #222222;
+    color: black !important;
+
+    
     
   }
   
@@ -35,7 +37,7 @@
   
   form button {
     background: #ff6699;
-    background-color: #222222;
+    background-color: #f8efef;
     color: black;
     cursor: pointer;
   }
