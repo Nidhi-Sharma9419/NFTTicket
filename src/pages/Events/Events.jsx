@@ -87,7 +87,13 @@ export default function Events() {
 
   return (
     <div className="container justify-content-center text-center align-items-center">
-      <h1 className="">All Events</h1>
+   <h1 class="p-4 text-3xl font-bold text-gray-800 relative inline-block">
+  <span class="border-2 border-white rounded-full px-4 py-2">
+    All Events
+  </span>
+</h1>
+
+
       <div className="row justify-content-center align-items-center">
         {events.map((event) => (
           <div key={event.eventId} className="col-7 col-md-5 col-lg-3 ">

@@ -5,6 +5,7 @@ import { signers } from "../Helpers/Contracts";
 import { isValidImage } from "../Helpers/Validation";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Buffer } from "buffer";
+import './style.css';
 const ipfsClient = require("ipfs-http-client");
 var processId = "2Qqta2eVmqpYQh6TFS3WtgV1spA"
 var processSecret = "411bf5dd4489022a0e8cd045238c1172"
