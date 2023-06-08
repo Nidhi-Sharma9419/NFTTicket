@@ -63,8 +63,8 @@ export default function Header({
                     }`}
                 onClick={connectWallet}
               >
-                <button className="button primary-btn undefined">
-                  Connect
+                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  Connect Wallet
                 </button>
               </li>
             ) : (
@@ -88,7 +88,7 @@ export default function Header({
                 </li>
 
                 <li
-                  className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
+                  className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] hover:text-red
                 border-b-transparent ${
                   pathMatchRoute("/events-myevents") && "text-black border-b-red-500"
                 }`}
@@ -101,7 +101,7 @@ export default function Header({
                 border-b-transparent ${
                   pathMatchRoute("/book-tickets") &&
                   "text-black border-b-red-500"
-                }`}
+                }hover:text-black`}
                   onClick={() => navigate("/book-tickets")}
                 >
                   Manage Events
