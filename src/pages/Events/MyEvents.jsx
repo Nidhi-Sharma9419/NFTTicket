@@ -72,7 +72,10 @@ export default function MyEvents() {
   if (err) {
     return (
       <div className="container text-center">
-        <h1>Your Events</h1>
+        <h1 className="bg-gray-200 p-4 text-3xl font-bold text-gray-800">
+  Your Events
+</h1>
+
         <p className="text-danger display-6">{err}</p>
       </div>
     );
@@ -81,7 +84,9 @@ export default function MyEvents() {
   if (!events.length) {
     return (
       <div className="container text-center">
-        <h1 className="m-4">Your Events</h1>
+        <h1 className="bg-gray-200 p-4 text-3xl font-bold text-gray-800">
+  Your Events
+</h1>
         <p className="display-6">You have created no events</p>
         <p className="fw-bold">
             <a onClick={() => navigate("/events-create")} className="mr-6">
@@ -94,7 +99,7 @@ export default function MyEvents() {
 
   return (
     <div className="container justify-content-center text-center align-items-center">
-      <h1 className="m-4">Your Events</h1>
+      <h1 className="m-4 bg-gray-200 border-2 rounded-full p-4 text-3xl font-bold text-gray-800">Your Events</h1>
       <div className="row justify-content-center align-items-center">
         {events.map((event) => (
           <div key={event.eventId} className="col-7 col-md-5 col-lg-4 ">
@@ -144,8 +149,8 @@ export default function MyEvents() {
                   </p>
                 )}
                 <button
-                  style={{ backgroundColor: "#eee8a9" }}
-                  className="btn fw-bold text-primary"
+                  
+                  className="btn fw-bold text-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                   onClick={() => {
                     navigate(`/tickets/create/${event.eventId}`);
                   }}
@@ -158,7 +163,7 @@ export default function MyEvents() {
         ))}
       </div>
       <button
-        className="btn btn-lg btn-primary"
+        className="btn btn-lg btn-primary bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
         onClick={() => {
             navigate("/events-create");
         }}
