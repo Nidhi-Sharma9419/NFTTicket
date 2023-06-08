@@ -94,17 +94,17 @@ export default function Header({
                 }`}
                   onClick={() => navigate("/events-myevents")}
                 >
-                  My Events
+                  Manage Events
                 </li>
                 <li
                   className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
                 border-b-transparent ${
                   pathMatchRoute("/book-tickets") &&
                   "text-black border-b-red-500"
-                }hover:text-black`}
+                }`}
                   onClick={() => navigate("/book-tickets")}
                 >
-                  Manage Events
+                  My Tickets
                 </li>
                 <li
                   className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]

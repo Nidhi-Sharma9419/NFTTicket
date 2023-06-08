@@ -1,17 +1,15 @@
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
+import { useState, useEffect, lazy, Suspense } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ethers } from "ethers";
 import axios from "axios";
 import { nftaddress } from "../../MyComponents/Helpers/config";
 import { signers } from "../../MyComponents/Helpers/Contracts";
-const QrReader = dynamic(() => import("react-qr-reader"), { ssr: false });
+
 
 
 
 export default function Validate() {
-  const router = useRouter();
-  const eventId = router.query["id"];
+    const  { eventId } = useParams();
   const [ticket, setTicket] = useState("");
   const [eventName, setEventName] = useState("");
   const [id, setId] = useState("");
@@ -22,9 +20,16 @@ export default function Validate() {
   const [loadingState, setLoadingState] = useState(false);
 
   useEffect(() => {
-    if (!router.isReady) return;
     loadEvent();
-  }, [router.isReady]);
+  }, []);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  function pathMatchRoute(route) {
+    if (route === location.pathname) {
+      return true;
+    }
+  }
 
   const handleErrorWebCam = (error) => {
     alert(error);
@@ -140,18 +145,8 @@ export default function Validate() {
       <h3>Scan QR Code</h3>
       <div className="d-flex justify-content-center m-3">
         <div style={{ height: "32vh", width: "32vh" }}>
-          <QrReader
-            delay={300}
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-            onError={handleErrorWebCam}
-            onScan={handleScanWebCam}
-          />
+
+
         </div>
       </div>
       <p className="display-6">Scan User's Ticket QR Code</p>
