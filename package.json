@@ -10,15 +10,28 @@
     "@testing-library/user-event": "^13.5.0",
     "@walletconnect/ethereum-provider": "^2.7.8",
     "@web3modal/standalone": "^2.4.3",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.1",
+    "buffer": "^6.0.3",
     "coinbase": "^2.0.8",
+    "crypto-browserify": "^3.12.0",
     "dom": "^0.0.3",
-    "ethers": "^6.4.2",
+    "ethers": "5.7",
+    "ipfs-http-client": "^50.1.2",
+    "jspdf": "^2.5.1",
+    "mime": "^3.0.0",
+    "next": "^13.4.4",
+    "nft.storage": "^7.1.0",
+    "qrcode.react": "^3.1.0",
     "react": "^18.2.0",
+    "react-datepicker": "^4.12.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "router": "^1.3.8",
+    "sass": "^1.63.1",
     "superstruct": "^1.0.3",
     "web-vitals": "^2.1.4",
     "web3modal": "^1.9.12"
@@ -49,5 +62,9 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.2"
+  },
+  "browser": {
+    "crypto": false,
+    "stream": false
   }
 }

@@ -1,9 +1,17 @@
 import React from 'react';
 import Button from "../../common/Button";
-
+import { useLocation, useNavigate } from "react-router-dom";
 
 import './topFold.css';
 const TopFold = () => {
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  function pathMatchRoute(route) {
+    if (route === location.pathname) {
+      return true;
+    }
+  }
   return (
     <div className="topFold absolute-center">
       <div className="tf-left">
@@ -14,8 +22,10 @@ const TopFold = () => {
         </div>
         <div className='tf-left-btns'>
           <Button btnType='PRIMARY' btnText="EXPLORE"/>
-         <Button btnType='SECONDARY' btnText="Create" customClass='tf-left-secondary-btn'/>
-         
+         {/* <Button onClick={() => navigate("/events-create")} btnType='SECONDARY' btnText="Create" customClass='tf-left-secondary-btn'/> */}
+         <button onClick={() => navigate("/events-create")} className="button secondary-btn undefined">
+         Create
+                </button>
           </div>
             <div className='tf-left-infoStats '>
             <div className='tf-is-infoItem absolute-center'>

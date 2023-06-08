@@ -34,22 +34,22 @@ export default function Connect (){
 
 async function connectWallet(){
    
-    try {
-        let web3Modal = new Web3Modal( {
-        cacheProvider: false,
-        providerOptions,
-    });
-    const web3ModalInstance = await web3Modal.connect();
-    const web3ModalProvider = new ethers.BrowserProvider(web3ModalInstance);
-    if(web3ModalProvider){
-        setWeb3Provider(web3ModalProvider);
-    }
-    console.log(web3ModalProvider);
-    } catch (error) { 
+    // try {
+    //     let web3Modal = new Web3Modal( {
+    //     cacheProvider: false,
+    //     providerOptions,
+    // });
+    // const web3ModalInstance = await web3Modal.connect();
+    // const web3ModalProvider = new ethers.BrowserProvider(web3ModalInstance);
+    // if(web3ModalProvider){
+    //     setWeb3Provider(web3ModalProvider);
+    // }
+    // console.log(web3ModalProvider);
+    // } catch (error) { 
 
-    console.error(error);
+    // console.error(error);
 
-    }
+    // }
 }
 
 return (
