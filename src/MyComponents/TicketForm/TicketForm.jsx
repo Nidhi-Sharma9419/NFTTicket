@@ -43,6 +43,8 @@ export default function TicketForm() {
 
     return (
         <div className="container">
+        <div className='bg-blob'></div>
+
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Ticket Name</label>
                 <input
@@ -137,6 +139,8 @@ export default function TicketForm() {
                     <p>Max Resale Price: {submittedData.resale}</p>
                 </div>
             )}
+            
         </div>
+        
     );
 }
