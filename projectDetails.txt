@@ -1,0 +1,20 @@
+#Inspiration
+We were inspired to create a faster and decentralized solution for ticket management in events, such as concerts. We wanted to streamline the purchase, return, and resale process by leveraging web3 technology with Chainlink.
+
+#What it does
+NFTix is a decentralized ticket management platform built on web3 and Chainlink. It revolutionizes the way tickets are handled for events. Users can purchase, return, or resell their tickets securely and transparently on the blockchain.
+
+#How we built it
+We developed the smart contracts that power the ticket management functionalities. We installed the necessary packages and integrated them into our project. Additionally, we built a frontend interface to provide a user-friendly experience.
+
+#Challenges we ran into
+During the development process, we encountered an issue when adding an additional contract after integrating the frontend with web-pack. However, our team worked together to overcome this challenge and find a solution.
+
+#Accomplishments that we're proud of
+We are proud of how our team collaborated, regardless of our different educational backgrounds. We supported each other throughout the project and learned valuable skills along the way.
+
+#What we learned
+As part of our journey, we participated in live coding sessions. These sessions allowed each team member to learn from different perspectives and gain a comprehensive understanding of the entire creation process.
+
+#What's next for NFTix
+Our next goal for NFTix is to secure additional funding to support its continued development. We aim to enhance the platform's features and expand its reach to provide a seamless and decentralized ticket management experience for event-goers.
