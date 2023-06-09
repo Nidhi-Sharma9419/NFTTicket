@@ -96,22 +96,20 @@ export default function Events() {
 
       <div className="row justify-content-center align-items-center" >
         {events.map((event) => (
-
           <div key={event.eventId} className="col-7 col-md-5 col-lg-3 my-10 ">
             <div className="card border border-secondary shadow rounded-l overflow-hidden m-3 pt-3 w-100">
               <img src={event.imageUri} style={{transform: "translate(0px,-25px)"}}/>
-
               <div className="card-body">
-                <div style={{ height: "25px", overflow: "auto" }}>
+                <div style={{ height: "60px", overflow: "auto" }}>
                   <h5 className="card-title text-center">
                     <span className="fw-bold text-primary">{event.name}</span> -
                     ID: #{event.eventId}
                   </h5>
                 </div>
-                <div style={{ height: "25px", overflow: "auto" }}>
+                <div style={{ height: "64px", overflow: "auto" }}>
                   <p>{event.description}</p>
                 </div>
-                <div style={{ height: "25px", overflow: "auto" }}>
+                <div style={{ height: "40px", overflow: "auto" }}>
                   <p>
                     <i className="bi bi-calendar3"></i> {event.startDate}
                   </p>
@@ -122,7 +120,7 @@ export default function Events() {
                   </p>
                 </div>
               </div>
-              {event.soldOut ? (
+              {!event.soldOut ? (
                 <button
                   onClick={() => {
                     navigate(`/events/${event.eventId}`);

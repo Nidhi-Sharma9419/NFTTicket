@@ -168,17 +168,26 @@ export default function CreateTicket() {
       const ticketPrice = ethers.utils.parseUnits(priceMATIC, "ether");
       const resalePrice = ethers.utils.parseUnits(maxResalePriceMATIC, "ether");
 
-      let tokenId = -1;
+      let tokenId = new Big(1);
       let nftTransaction = await signedTokenContract.createToken(url, amount);
       let nftTx = await nftTransaction.wait();
       nftTx.events.forEach((element) => {
-        if (element.event === 'NFTTicketCreated') {
-          tokenId = element.args.tokenId.toNumber();
+        if (element.event === "NFTTicketCreated") {
+          tokenId = new Big(element.args.tokenId.toString());
+          console.log("tokenId", tokenId.toString());
         }
       });
+      console.log( eventId,
+        tokenId,
+        nftaddress,
+        purchaseLimit,
+        amount,
+        ticketPrice,
+        royaltyFee,
+        resalePrice)
       const marketTransaction = await signedMarketContract.createMarketTicket(
         eventId,
-        tokenId, 
+        tokenId,
         nftaddress,
         purchaseLimit,
         amount,

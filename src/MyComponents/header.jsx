@@ -49,7 +49,7 @@ export default function Header({
         <div>
           <img
             src={image}
-            style={{display: "inline-block", transform: "scale(2)"}}
+            style={{transform: "scale(2)"}}
             alt="NFTix"
             className="flex items-center justify-between h-16 px-4 cursor-pointer"
             onClick={() => navigate("/")}
