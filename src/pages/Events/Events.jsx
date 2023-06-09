@@ -94,11 +94,13 @@ export default function Events() {
 </h1>
 
 
-      <div className="row justify-content-center align-items-center">
+      <div className="row justify-content-center align-items-center" >
         {events.map((event) => (
-          <div key={event.eventId} className="col-7 col-md-5 col-lg-3 "  style={{ height: "250px", overflow: "auto" }}>
-            <div className="card border border-secondary shadow rounded-l overflow-scroll m-3 pt-3 w-100">
-              <img src={event.imageUri} className="" />
+
+          <div key={event.eventId} className="col-7 col-md-5 col-lg-3 my-10 ">
+            <div className="card border border-secondary shadow rounded-l overflow-hidden m-3 pt-3 w-100">
+              <img src={event.imageUri} style={{transform: "translate(0px,-25px)"}}/>
+
               <div className="card-body">
                 <div style={{ height: "25px", overflow: "auto" }}>
                   <h5 className="card-title text-center">

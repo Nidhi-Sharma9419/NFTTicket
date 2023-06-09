@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import image from "../NFTix.svg";
 import { ethers } from "ethers";
+import './myStyle.css'
 
 export default function Header({
   web3Provider,
@@ -17,11 +18,11 @@ export default function Header({
   }
 
   function truncateBalance(balance, decimalPlaces) {
-   let res = ethers.utils.formatEther(balance);
+    let res = ethers.utils.formatEther(balance);
     res = (+res).toFixed(decimalPlaces);
     return res;
   }
-  
+
   async function connectWallet() {
     try {
       if (window.ethereum) {
@@ -41,14 +42,16 @@ export default function Header({
     }
   }
 
+
   return (
     <div className="bg-zinc-900 border-b shadow-sm sticky top-0 z-50">
       <header className="flex justify-between items-center px-3 max-w-6xl mx-auto">
         <div>
           <img
             src={image}
+            style={{display: "inline-block", transform: "scale(2)"}}
             alt="NFTix"
-            className="flex items-center justify-between h-14 px-4 cursor-pointer"
+            className="flex items-center justify-between h-16 px-4 cursor-pointer"
             onClick={() => navigate("/")}
           />
         </div>
@@ -57,10 +60,9 @@ export default function Header({
             {web3Provider === null ? (
               <li
                 className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
-                    border-b-transparent ${
-                      pathMatchRoute("/connect") &&
-                      "text-black border-b-red-500"
-                    }`}
+                    border-b-transparent ${pathMatchRoute("/connect") &&
+                  "text-black border-b-red-500"
+                  }`}
                 onClick={connectWallet}
               >
                 <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
@@ -69,19 +71,17 @@ export default function Header({
               </li>
             ) : (
               <>
-                <li
-                  className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
-                    pathMatchRoute("/") && "text-black border-b-red-500"
-                  }`}
+                <li 
+                  className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-black border-b-red-500"
+                    }`}
                   onClick={() => navigate("/")}
                 >
                   Home
                 </li>
                 <li
                   className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
-                border-b-transparent ${
-                  pathMatchRoute("/events") && "text-black border-b-red-500"
-                }`}
+                border-b-transparent ${pathMatchRoute("/events") && "text-black border-b-red-500"
+                    }`}
                   onClick={() => navigate("/events")}
                 >
                   All Events
@@ -89,30 +89,27 @@ export default function Header({
 
                 <li
                   className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] hover:text-red
-                border-b-transparent ${
-                  pathMatchRoute("/events-myevents") && "text-black border-b-red-500"
-                }`}
+                border-b-transparent ${pathMatchRoute("/events-myevents") && "text-black border-b-red-500"
+                    }`}
                   onClick={() => navigate("/events-myevents")}
                 >
                   Manage Events
                 </li>
                 <li
                   className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
-                border-b-transparent ${
-                  pathMatchRoute("/tickets") &&
-                  "text-black border-b-red-500"
-                }`}
-                  onClick={() => navigate("/tickets")}
+                border-b-transparent ${pathMatchRoute("/book-tickets") &&
+                    "text-black border-b-red-500"
+                    }`}
+                  onClick={() => navigate("/book-tickets")}
                 >
                   My Tickets
                 </li>
                 <li
                   className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
-                border-b-transparent ${
-                  pathMatchRoute("/resale") &&
-                  "text-black border-b-red-500"
-                }`}
-                  onClick={() => navigate("/resale")}
+                border-b-transparent ${pathMatchRoute("/resale-tickets") &&
+                    "text-black border-b-red-500"
+                    }`}
+                  onClick={() => navigate("/resale-tickets")}
                 >
                   Resale
                 </li>
@@ -120,7 +117,7 @@ export default function Header({
                   className="cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
                 border-b-transparent"
                 >
-                  {truncateWalletAddress(walletAddress)} - {truncateBalance(walletBalance,4)}
+                  {truncateWalletAddress(walletAddress)} - {truncateBalance(walletBalance, 4)}
                 </li>
               </>
             )}
