@@ -1,4 +1,4 @@
-import { devserver } from "../";
+import { devserver } from "../config";
 
 const Matic  = async (price) => {
   try {
