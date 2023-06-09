@@ -74,8 +74,8 @@ export default function MyEvents() {
   if (err) {
     return (
       <div className="container text-center">
-        <h1 className="bg-gray-200 p-4 text-3xl font-bold text-gray-800">
-          Your Events
+        <h1 className="">
+           <span className='heading-gradient'> Your Events</span>
         </h1>
 
         <p className="text-danger display-6">{err}</p>
@@ -102,12 +102,12 @@ export default function MyEvents() {
   return (
 
     <div className="container justify-content-center text-center align-items-center">
-      <h1 className="m-4 bg-gray-200 border-2 rounded-full p-4 text-3xl font-bold text-gray-800">Your Events</h1>
+      <h1 className="p-4 text-4xl font-bold"> <span className='heading-gradient'>Your Events</span></h1>
       <div className="row justify-content-center align-items-center">
         
         {events.map((event) => (
           <div key={event.eventId} className="col-7 col-md-5 col-lg-4 ">
-            <div className="card border border-secondary shadow rounded-l overflow-scroll m-3 w-100">
+            <div className="card border border-secondary shadow rounded-l overflow-hidden m-3 w-100">
               <div className="card-header mb-2">
                 <a onClick={() => navigate(`/events-myevents/${event.eventId}`)}>
                   View Event Details <i className="bi bi-eye-fill"></i>

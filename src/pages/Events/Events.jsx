@@ -87,10 +87,8 @@ export default function Events() {
 
   return (
     <div className="container justify-content-center text-center align-items-center">
-   <h1 class="p-4 text-3xl font-bold text-gray-800 relative inline-block">
-  <span class="border-2 border-white rounded-full px-4 py-2">
-    All Events
-  </span>
+   <h1 class="py-2 p-4 text-4xl font-bold " >
+   <span className='heading-gradient'> All Events</span>
 </h1>
 
 
