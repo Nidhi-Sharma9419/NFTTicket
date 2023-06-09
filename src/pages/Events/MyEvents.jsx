@@ -3,6 +3,8 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { signers } from "../../MyComponents/Helpers/Contracts";
 
+
+
 export default function MyEvents() {
 
   const [events, setEvents] = useState([]);
@@ -19,7 +21,7 @@ export default function MyEvents() {
       const { signedMarketContract } = signedContracts;
       console.log(signedMarketContract)
       const data = await signedMarketContract.getMyEvents();
-        console.log(data)
+      console.log(data)
       const allEvents = await Promise.all(
         data.map(async (i) => {
           const eventUri = await i.uri;
@@ -72,9 +74,9 @@ export default function MyEvents() {
   if (err) {
     return (
       <div className="container text-center">
-        <h1 className="bg-gray-200 p-4 text-3xl font-bold text-gray-800">
-  Your Events
-</h1>
+        <h1 className="">
+           <span className='heading-gradient'> Your Events</span>
+        </h1>
 
         <p className="text-danger display-6">{err}</p>
       </div>
@@ -85,31 +87,33 @@ export default function MyEvents() {
     return (
       <div className="container text-center">
         <h1 className="bg-gray-200 p-4 text-3xl font-bold text-gray-800">
-  Your Events
-</h1>
+          Your Events
+        </h1>
         <p className="display-6">You have created no events</p>
         <p className="fw-bold">
-            <a onClick={() => navigate("/events-create")} className="mr-6">
-              Create Event <i className="bi bi-arrow-right-circle-fill"></i>
-            </a>
+          <a onClick={() => navigate("/events-create")} className="mr-6">
+            Create Event <i className="bi bi-arrow-right-circle-fill"></i>
+          </a>
         </p>
       </div>
     );
   }
 
   return (
+
     <div className="container justify-content-center text-center align-items-center">
-      <h1 className="m-4 bg-gray-200 border-2 rounded-full p-4 text-3xl font-bold text-gray-800">Your Events</h1>
+      <h1 className="p-4 text-4xl font-bold"> <span className='heading-gradient'>Your Events</span></h1>
       <div className="row justify-content-center align-items-center">
+        
         {events.map((event) => (
           <div key={event.eventId} className="col-7 col-md-5 col-lg-4 ">
-            <div className="card border border-secondary shadow rounded-l overflow-scroll m-3 w-100">
+            <div className="card border border-secondary shadow rounded-l overflow-hidden m-3 w-100">
               <div className="card-header mb-2">
-                  <a onClick={() => navigate(`/events-myevents/${event.eventId}`)}>
-                    View Event Details <i className="bi bi-eye-fill"></i>
-                  </a>
+                <a onClick={() => navigate(`/events-myevents/${event.eventId}`)}>
+                  View Event Details <i className="bi bi-eye-fill"></i>
+                </a>
               </div>
-              <img src={event.imageUri}  />
+              <img src={event.imageUri} />
               <div className="card-body">
                 <div style={{ height: "60px", overflow: "auto" }}>
                   <h5 className="card-title text-center">
@@ -130,10 +134,10 @@ export default function MyEvents() {
                     <i className="bi bi-geo-alt-fill"></i> {event.location}
                   </p>
                 </div>
-                  <button onClick={() => navigate(`/events-validate/${event.eventId}`)} >
-                    Validate Event's Tickets{" "}
-                    <i className="bi bi-arrow-right-circle-fill"></i>
-                  </button>
+                <button onClick={() => navigate(`/events-validate/${event.eventId}`)} >
+                  Validate Event's Tickets{" "}
+                  <i className="bi bi-arrow-right-circle-fill"></i>
+                </button>
               </div>
               <div className="card-footer bg-primary">
                 <p className="small text-light fw-bold">
@@ -149,7 +153,7 @@ export default function MyEvents() {
                   </p>
                 )}
                 <button
-                  
+
                   className="btn fw-bold text-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                   onClick={() => {
                     navigate(`/tickets-create/${event.eventId}`);
@@ -165,7 +169,7 @@ export default function MyEvents() {
       <button
         className="btn btn-lg btn-primary bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
         onClick={() => {
-            navigate("/events-create");
+          navigate("/events-create");
         }}
       >
         Create Event

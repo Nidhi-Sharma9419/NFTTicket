@@ -3,9 +3,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #222222, #888888);
+    /* height: 100vh; */
+    background: linear-gradient(to bottom, #222222, #000000);
+    /* background-color: green; */
   }
+
+  .bg-blob{
+    height: 270px;
+    width: 270px;
+    background-color: aquamarine;
+    filter: blur(100.58px);
+    position: absolute;
+    z-index: -99;
+    left: 50%;
+    
+    .tn-bg-blob{
+      height: 270px;
+      width: 270px;
+      background-color: aquamarine;
+      filter: blur(100.58px);
+      position: absolute;
+      z-index: -99;
+      left: 50%;
+      
+      transform: translate(-50%);
+  }
+  
+}
+
   
   
   form {

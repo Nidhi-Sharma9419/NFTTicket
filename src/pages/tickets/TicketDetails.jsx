@@ -105,7 +105,7 @@ export default function TicketDetails() {
             style={{ height: "22vh", overflow: "auto" }}
             src={ticket.imageUri}
           />
-          <div className=" card-body">
+          <div className="card-body">
             <div id="eventDetails">
               <div className="m-3" style={{ maxHeight: "70px", overflow: "auto" }}>
                 <h2 className="card-title text-center">

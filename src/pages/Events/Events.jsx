@@ -86,30 +86,28 @@ export default function Events() {
   }
 
   return (
-    <div className="container justify-content-center text-center align-items-center">
-   <h1 class="p-4 text-3xl font-bold text-gray-800 relative inline-block">
-  <span class="border-2 border-white rounded-full px-4 py-2">
-    All Events
-  </span>
+    <div className="container justify-content-center text-center align-items-center ">
+   <h1 class="py-2 p-4 text-4xl font-bold "  >
+   <span className='heading-gradient'> All Events</span>
 </h1>
 
 
-      <div className="row justify-content-center align-items-center">
+      <div className="row justify-content-center align-items-center" >
         {events.map((event) => (
-          <div key={event.eventId} className="col-7 col-md-5 col-lg-3 "  style={{ height: "250px", overflow: "auto" }}>
-            <div className="card border border-secondary shadow rounded-l overflow-scroll m-3 pt-3 w-100">
-              <img src={event.imageUri} className="" />
+          <div key={event.eventId} className="col-7 col-md-5 col-lg-3 my-10 ">
+            <div className="card border border-secondary shadow rounded-l overflow-hidden m-3 pt-3 w-100">
+              <img src={event.imageUri} style={{transform: "translate(0px,-25px)"}}/>
               <div className="card-body">
-                <div style={{ height: "25px", overflow: "auto" }}>
+                <div style={{ height: "60px", overflow: "auto" }}>
                   <h5 className="card-title text-center">
                     <span className="fw-bold text-primary">{event.name}</span> -
                     ID: #{event.eventId}
                   </h5>
                 </div>
-                <div style={{ height: "25px", overflow: "auto" }}>
+                <div style={{ height: "64px", overflow: "auto" }}>
                   <p>{event.description}</p>
                 </div>
-                <div style={{ height: "25px", overflow: "auto" }}>
+                <div style={{ height: "40px", overflow: "auto" }}>
                   <p>
                     <i className="bi bi-calendar3"></i> {event.startDate}
                   </p>
@@ -120,7 +118,7 @@ export default function Events() {
                   </p>
                 </div>
               </div>
-              {event.soldOut ? (
+              {!event.soldOut ? (
                 <button
                   onClick={() => {
                     navigate(`/events/${event.eventId}`);
@@ -137,6 +135,7 @@ export default function Events() {
             </div>
           </div>
         ))}
+        
       </div>
     </div>
   );

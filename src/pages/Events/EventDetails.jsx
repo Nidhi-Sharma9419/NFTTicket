@@ -158,6 +158,8 @@ export default function EventDetails() {
       <>
         <section>
           <div className="container justify-content-center align-items-center border-bottom  border-secondary">
+       
+
             <div className="row justify-content-center align-items-center">
               <div className="col-auto text-center card shadow border border-dark rounded-l overflow-scroll m-3 pt-3">
                 <img src={event.imageUri}  />

@@ -14,12 +14,8 @@ import CreateEvent from "./pages/Events/CreateEvent";
 import MyEvents from "./pages/Events/MyEvents";
 import Validate from "./pages/Events/Validate";
 import EventDetails from "./pages/Events/EventDetails";
-import LoadEvent from "./pages/Events/LoadEvent";
 import TicketDetails from "./pages/tickets/TicketDetails";
 import CreateTicket from "./pages/tickets/Create/CreateTicket";
-import ResaleList from "./pages/Resale/ResaleList";
-import EventResale from "./pages/Resale/EventResale";
-import ResellTicket from "./pages/Resale/Create/ResellTicket";
 import BookTickets from "./pages/BookTickets";
 import Web3Modal from "web3modal";
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
@@ -113,19 +109,15 @@ const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route path="/connect" element={<Connect />}></Route>
           <Route path="/events" element={<Events />}></Route>
-          <Route path="/events/:eventId" element={<EventDetails />}></Route>
           <Route path="/events-create" element={<CreateEvent />}></Route>
           <Route path="/events-myevents" element={<MyEvents />}></Route>
-          <Route path="/events-myevents/:eventId" element={<LoadEvent />}></Route>
+          <Route path="/events-myevents/:eventId" element={<EventDetails />}></Route>
           <Route path="/events-validate/:eventId" element={<Validate />}></Route>
           <Route path="/book-tickets" element={<BookTickets />}></Route>
           <Route path="/resale-tickets" element={<Resale />}></Route>
           <Route path="/tickets" element={<MyTickets />}></Route>
           <Route path="/tickets/:tokenId" element={<TicketDetails />}></Route>
           <Route path="/tickets-create/:eventId" element={<CreateTicket />}></Route>
-          <Route path="/resale" element={<ResaleList />}></Route>
-          <Route path="/resale/:tokenId" element={<EventResale />}></Route>
-          <Route path="/resale-create/:ticketId" element={<ResellTicket />}></Route>
         </Routes>
       </Router>
     </div>
