@@ -109,10 +109,10 @@ export default function Header({
                 <li
                   className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px]
                 border-b-transparent ${
-                  pathMatchRoute("/resale-tickets") &&
+                  pathMatchRoute("/resale") &&
                   "text-black border-b-red-500"
                 }`}
-                  onClick={() => navigate("/resale-tickets")}
+                  onClick={() => navigate("/resale")}
                 >
                   Resale
                 </li>
